@@ -1,0 +1,20 @@
+name: Jacob Fentress
+jquery_js: /js/jquery-1.8.1.min.js
+main_css: /css/master.css
+exclude: Rakefile
+
+safe: false
+auto: true
+server: false
+server_port: 4000
+baseurl: /
+url: http://localhost:4000
+
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+
+future: false
+lsi: false
+pygments: false
+permalink: /:year/:month/:day/:title
