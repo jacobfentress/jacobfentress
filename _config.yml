@@ -1,7 +1,6 @@
 name: Jacob Fentress
-jquery_js: /js/jquery-1.8.1.min.js
 main_css: /css/master.css
-exclude: Rakefile
+exclude: Rakefile, README.md
 
 safe: false
 auto: true
