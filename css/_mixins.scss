@@ -46,3 +46,11 @@
 	-webkit-box-sizing: $box;
 	        box-sizing: $box;
 }
+
+@mixin clearfix() {
+	&:after {
+	    content:"";
+	    display:table;
+	    clear:both;
+	}
+}
