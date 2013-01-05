@@ -10,15 +10,24 @@
 		<title>{{ page.title }}</title>
 
 		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-		{% comment %}
-			<link rel="shortcut icon" href="/favicon.ico">
-			<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-		{% endcomment %}
+		<meta name="viewport" content="width=device-width">
+		
+		<!-- place favicon.ico and apple-touch-icon.png in the root directory -->
 
 		<link rel="stylesheet" href="{{ site.main_css }}">
-		
-		<script type="text/javascript" src="//use.typekit.net/pvu2ati.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+		<script src="/js/modernizr.js"></script>
+		<script>
+			yepnope([{
+				load: '//use.typekit.net/pvu2ati.js',
+				callback: function (url, result, key) {
+					try{Typekit.load();}catch(e){}
+				}
+			}, {
+				load: '/js/ender.min.js'
+			}, {
+				load: '/js/the-business.js'
+			}]);
+		</script>
 	</head>
-	<body class="{{ page.layout }}">
+	<body>

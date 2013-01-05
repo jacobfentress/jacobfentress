@@ -6,10 +6,10 @@
 
 // ------------------
 
-$base-font-size:21px;
-$base-line-height:27px;
-$cream:#faeec6;
-$red:#bb1723;
+$base-font-size: 21px;
+$base-line-height: 27px;
+$cream: #faeec6;
+$red: #bb1723;
 
 $museo-sans: "museo-sans", Arial, sans-serif;
 $museo-slab: "museo-slab", Georgia, serif;
@@ -17,39 +17,110 @@ $museo-slab: "museo-slab", Georgia, serif;
 // ------------------
 
 body {
-	background:#f9f9f9 url(/img/debut_light_@2x.png) repeat 0 0;
-	background-size:200px;
-	font-family:$museo-sans;
-	font-size:$base-font-size;
-	font-weight:300;
-	line-height:$base-line-height;
+	background: #373737 url(/img/debut_dark_@2X.png) repeat 0 0;
+	background-size: 200px;
+	font-family: $museo-sans;
+	font-size: $base-font-size;
+	font-weight: 300;
+	line-height: $base-line-height;
+	margin: 0;
+	padding: 0;
+	@include transition(background 1s ease-in 2s);
+}
+body.init {
+	background: #f9f9f9 url(/img/debut_light_@2X.png) repeat 0 0;
+	background-size: 200px;
+}
+body:after {
+	background: rgba(255,255,255,.1);
+	content: "explore";
+	font-family: $museo-slab;
+	font-size: .75em;
+	margin: 0 auto;
+	padding: .2em 0;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	@include transition(top 2s ease-in);
+	width: 100%;
+}
+body.init:after {
+	top: -3em;
 }
 
-.ie8 body {
-	background-image:url(/img/debut_light.png);
+.logo {
+	margin: 4em auto 0 auto;
+	padding: 0 20px;
+	width: 280px;
+}
+.compass {
+	margin: 0 auto;
+	padding: 80% 0 0 0;
+	position: relative;
+	@include transform(translateZ(0));
+	width: 80%;
+}
+.compass div {
+	background: rgba(255,255,255,.1);
+	height: 65%;
+	left: 39px;
+	position: absolute;
+	top: 39px;
+	@include transition(all 2s ease-in-out);
+	width: 65%
+}
+.init .compass div {
+	@include animation(fadeOut 4s);
+}
+.init .s1 {
+	@include transform(rotate(202.5deg));
+}
+.init .s2 {
+	@include transform(rotate(225deg));
+}
+.init .s3 {
+	@include transform(rotate(247.5deg));
+}
+.init .s4 {
+	@include transform(rotate(270deg));
+}
+
+.rose {
+	background: transparent url(/img/compass.png) no-repeat 50% 50%;
+	background-size: 100%;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	@include transition(opacity 1s ease-in 2s);
+	width: 100%;
+}
+.init .rose {
+	opacity: 1;
 }
 
 h1 {
-	font-family:$museo-slab;
-	font-weight:300;
-	left:0;
-	margin:2.505em 0 0 0;
-	position:absolute;
-	text-align:center;
-	text-transform:lowercase;
-	top:50%;
-	width:100%;
+	color: #333;
+	font-family: $museo-slab;
+	font-weight: 300;
+	margin: .5em 0 0 0;
+	opacity: 0;
+	position: relative;
+	text-align: center;
+	text-transform: lowercase;
+	text-shadow: 0 1px 1px rgba(255,255,255,.15);
+	@include transition(opacity 1s ease-in 2s);
+	width: 100%;
+}
+.init h1 {
+	opacity: 1;
 }
 
-h1:after {
-	background:url(/img/compass.png) no-repeat 0 0;
-	background-size:100%;
-	bottom:100%;
-	content:"";
-	height:6em;
-	left:50%;
-	margin:0 0 .3em -3em;
-	position:absolute;
-	width:6em;
-	z-index:-1;
+
+
+@include keyframes(fadeOut) {
+	0%   {opacity: 1;}
+	50%  {opacity: 1;}
+	100% {opacity: 0;}
 }
