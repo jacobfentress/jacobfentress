@@ -63,7 +63,7 @@
   }
 }
 
-@mixin clearfix() {
+%cf {
 	&:after {
 	    content:"";
 	    display:table;
