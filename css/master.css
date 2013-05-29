@@ -1,0 +1,143 @@
+body {
+  background: #373737 url(/img/debut_dark.png) repeat 0 0;
+  background-size: 200px;
+  font-family: "museo-sans", Arial, sans-serif;
+  font-size: 1.3125em;
+  font-weight: 300;
+  line-height: 1.2857;
+  margin: 0;
+  padding: 0;
+  -moz-transition: background 1s ease-in 2s;
+  -webkit-transition: background 1s ease-in 2s;
+  transition: background 1s ease-in 2s; }
+
+.no-js body, body.init {
+  background: #f9f9f9 url(/img/debut_light.png) repeat 0 0;
+  background-size: 200px; }
+
+.logo {
+  margin: 3.8571em auto 0 auto;
+  max-width: 80%;
+  padding: 0 20px;
+  width: 14.2857em; }
+  @media only screen and (max-height: 600px) {
+    .logo {
+      margin-top: 1.2857em; } }
+
+.compass {
+  margin: 0 auto;
+  padding: 75% 0 0 0;
+  position: relative;
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  width: 75%; }
+
+.compass div {
+  background: rgba(255, 255, 255, 0.1);
+  height: 65%;
+  left: 39px;
+  position: absolute;
+  top: 39px;
+  -moz-transition: all 2s ease-in-out;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  width: 65%; }
+
+.no-js .compass div {
+  opaacity: 0; }
+
+.init .compass div {
+  -moz-animation: fadeOut 4s;
+  -webkit-animation: fadeOut 4s;
+  animation: fadeOut 4s; }
+
+.init .s1 {
+  -moz-transform: rotate(202.5deg);
+  -ms-transform: rotate(202.5deg);
+  -webkit-transform: rotate(202.5deg);
+  transform: rotate(202.5deg); }
+
+.init .s2 {
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg); }
+
+.init .s3 {
+  -moz-transform: rotate(247.5deg);
+  -ms-transform: rotate(247.5deg);
+  -webkit-transform: rotate(247.5deg);
+  transform: rotate(247.5deg); }
+
+.init .s4 {
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.rose {
+  background: transparent url(/img/compass.png) no-repeat 50% 50%;
+  background-size: 100%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -moz-transition: opacity 1s ease-in 2s;
+  -webkit-transition: opacity 1s ease-in 2s;
+  transition: opacity 1s ease-in 2s; }
+
+.no-js .rose, .init .rose {
+  opacity: 1; }
+
+h1 {
+  color: #333;
+  font-family: "museo-slab", Georgia, serif;
+  font-size: 2em;
+  font-weight: 300;
+  margin: 00;
+  opacity: 0;
+  position: relative;
+  text-align: center;
+  text-transform: lowercase;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.15);
+  -moz-transition: opacity 1s ease-in 2s;
+  -webkit-transition: opacity 1s ease-in 2s;
+  transition: opacity 1s ease-in 2s;
+  width: 100%; }
+
+.no-js h1, .init h1 {
+  opacity: 1; }
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  50% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  50% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+
+  50% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
