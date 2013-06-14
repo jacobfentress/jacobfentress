@@ -1,0 +1,1 @@
+var initTimer,jfInit=function(){$("body").addClass("init");clearInterval(initTimer)};$(document).ready(function(){$(".logo").one("mouseover",jfInit);initTimer=setInterval(jfInit,3e3)});
