@@ -12,7 +12,7 @@ lsi:         false
 source:      .
 destination: ./_site
 layouts:     ./_layouts
-exclude:     [ sass, codekit-config.json, README.md ]
+exclude:     [ sass, codekit-config.json, README.md, editorially ]
 
 future:      true
 show_drafts: nil
