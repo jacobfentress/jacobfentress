@@ -1,116 +1,149 @@
-@import "_mixins";
-@import "normalize";
+@import 'mixins';
+// @import 'normalize';
 
 
 // ------------------
 
 $base-font-size: 1.3125em;
-$base-line-height: 1.2857;
-$cream: #faeec6;
-$red: #bb1723;
+$base-line-height: 1.42857;
 
-$museo-sans: "museo-sans", Arial, sans-serif;
-$museo-slab: "museo-slab", Georgia, serif;
+$white: #f9f9f9;
+$black: #373737;
+$link: #e49d05;
+
+$gutter: $base-font-size;
+
+$sans: "franklin-gothic-urw-cond", sans-serif;
+$script: "bello-pro", sans-serif;
 
 // ------------------
 
 body {
-	background: #373737 url(/img/debut_dark.png) repeat 0 0;
-	background-size: 200px;
-	font-family: $museo-sans;
-	font-size: $base-font-size;
-	font-weight: 300;
-	line-height: $base-line-height;
-	margin: 0;
-	padding: 0;
-	@include transition(background 1s ease-in 2s);
+  background: $white;
+  font-family: $sans;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  margin: 0;
+  padding: 0;
+  transition: background 1s ease-in 2s;
 }
-.no-js body, body.init {
-	background: #f9f9f9 url(/img/debut_light.png) repeat 0 0;
-	background-size: 200px;
+
+
+
+
+a {
+  color: $link;
+  transition: color .2s ease-in;
+
+  &:visited {
+    color: darken($link, 7%);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: lighten($link, 10%);
+    text-decoration: none;
+  }
 }
+
+
+
 
 .logo {
-	margin: $base-line-height * 3em auto 0 auto;
-	@media only screen and (max-height: 600px) {
-		margin-top: $base-line-height + em;
-	}
-	max-width: 80%;
-	padding: 0 20px;
-	width: 14.2857em;
-}
-.compass {
-	margin: 0 auto;
-	padding: 75% 0 0 0;
-	position: relative;
-	@include transform(translateZ(0));
-	width: 75%;
-}
-.compass div {
-	background: rgba(255,255,255,.1);
-	height: 65%;
-	left: 39px;
-	position: absolute;
-	top: 39px;
-	@include transition(all 2s ease-in-out);
-	width: 65%;
-}
-.no-js .compass div {
-	opaacity: 0;
-}
-.init .compass div {
-	@include animation(fadeOut 4s);
-}
-.init .s1 {
-	@include transform(rotate(202.5deg));
-}
-.init .s2 {
-	@include transform(rotate(225deg));
-}
-.init .s3 {
-	@include transform(rotate(247.5deg));
-}
-.init .s4 {
-	@include transform(rotate(270deg));
+  margin: $base-line-height * 3em auto $base-line-height + em;
+  max-width: 50%;
+  padding: 0 20px;
+  width: 11.90476em;
+
+  @media only screen and (max-height: #{600/16 * 1em}) {
+    margin: $base-line-height + em auto $base-line-height * .5em;
+  }
 }
 
-.rose {
-	background: transparent url(/img/compass.png) no-repeat 50% 50%;
-	background-size: 100%;
-	bottom: 0;
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-	@include transition(opacity 1s ease-in 2s);
+.compass {
+  margin: 0 auto;
+  padding: 75% 0 0;
+  position: relative;
+  transform: translateZ(0);
+  width: 75%;
+
+  div {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-name: rotate;
+    animation-timing-function: linear;
+    background: $black;
+    background: rgba($black, .5);
+    bottom: 17.5%;
+    left: 17.5%;
+    position: absolute;
+    right: 17.5%;
+    top: 17.5%;
+  }
 }
-.no-js .rose, .init .rose {
-	opacity: 1;
+
+.s1 {
+  animation-iteration-count: .5625; // 202.5
 }
+
+.s2 {
+  animation-iteration-count: .625; // 225
+}
+
+.s3 {
+  animation-iteration-count: .6875; // 247.5
+}
+
+.s4 {
+  animation-iteration-count: .75; // 270
+}
+
+
+
+
+.text {
+  margin-bottom: $base-line-height * 3em;
+  transition: opacity 1s ease-in;
+
+  @media only screen and (max-width: #{480/16 * 1em}) {
+    font-size: .8571em;
+  }
+
+  .wf-loading & {
+    opacity: 0;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 22.8571em;
+  padding: 0 $gutter;
+}
+
+
+
 
 h1 {
-	color: #333;
-	font-family: $museo-slab;
-	font-size: 2em;
-	font-weight: 300;
-	margin: 00;
-	opacity: 0;
-	position: relative;
-	text-align: center;
-	text-transform: lowercase;
-	text-shadow: 0 1px 1px rgba(255,255,255,.15);
-	@include transition(opacity 1s ease-in 2s);
-	width: 100%;
-}
-.no-js h1, .init h1 {
-	opacity: 1;
+  color: #434343;
+  display: inline;
+  font-family: $script;
+  font-size: 1.42857em;
+  line-height: 1;
+  margin: 0 .05em 0 .25em;
+  text-transform: lowercase;
 }
 
 
 
-@include keyframes(fadeOut) {
-	0%   {opacity: 1;}
-	50%  {opacity: 1;}
-	100% {opacity: 0;}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
 }
