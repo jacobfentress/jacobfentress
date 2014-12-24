@@ -1,14 +1,5 @@
 name: Jacob Fentress
 main_css: /css/master.css
-include:
-    - '.htaccess'
-    - _1_foundations
-    - _mixins
-    - _2_layout
-    - _3_elements
-    - _4_modules
-    - _5_sections
-    - '*.scss'
 exclude:
     - node_modules
     - Gruntfile.js
