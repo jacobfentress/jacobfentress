@@ -68,7 +68,7 @@ a {
   width: 75%;
 
   div {
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-name: rotate;
     animation-timing-function: linear;
@@ -83,19 +83,19 @@ a {
 }
 
 .s1 {
-  animation-iteration-count: .5625; // 202.5
+  animation-iteration-count: 1.3125; // 22.5
 }
 
 .s2 {
-  animation-iteration-count: .625; // 225
+  animation-iteration-count: .625; // 45
 }
 
 .s3 {
-  animation-iteration-count: .6875; // 247.5
+  animation-iteration-count: 1.6875; // 67.5
 }
 
 .s4 {
-  animation-iteration-count: .75; // 270
+  animation-iteration-count: 1; // 90
 }
 
 
