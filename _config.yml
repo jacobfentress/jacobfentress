@@ -31,7 +31,6 @@ layouts:     ./_layouts
 future:      true
 show_drafts: nil
 limit_posts: 0
-highlighter: false
 
 relative_permalinks: false
 
